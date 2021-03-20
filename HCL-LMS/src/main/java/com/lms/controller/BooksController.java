@@ -39,7 +39,7 @@ public class BooksController {
 
 //creating a get mapping that retrieves all the books detail from the database 
 	@GetMapping("/book")
-	@ApiOperation(value = "to get total number of books in library", response = List.class)
+	@ApiOperation(value = "to get total number of books in library")
 	private List<Books> getAllBooks() {
 		return booksService.getAllBooks();
 	}
@@ -73,7 +73,7 @@ public class BooksController {
 	}
 
 //creating post mapping that post the book detail in the database
-	@PostMapping("/books")
+	@PostMapping("/addbooks")
 	 @ApiOperation(value = "to add new book in library", response = String.class)
 	private int saveBook(@RequestBody Books books) {
 		booksService.saveOrUpdate(books);
